@@ -44,4 +44,40 @@ public class CalculadoraIMCTest {
         //Then
         assertThat(clasificacion, is("Delgadez severa"));
     }
+
+    @Test
+    @DisplayName("Clasifica como 'Delgadez Moderada' cuando el IMC es mayor o igual a 16 y menor a 17")
+
+    void imcDelgadezModeradaTest() {
+
+        //Given     
+        double peso = 50;
+        double estatura = 1.75;
+        CalculadoraIMC calculadora = new CalculadoraIMC();
+
+        //When
+        double imcCalculado = calculadora.calcularIMC(peso, estatura);
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
+
+        //Then
+        assertThat(clasificacion, is("Delgadez moderada"));
+    }
+
+    @Test
+    @DisplayName("Clasifica como 'Delgadez Leve' cuando el IMC es mayor o igual a 17 y menor a 18.5")
+
+    void imcDelgadezLeveTest() {
+
+        //Given     
+        double peso = 60;
+        double estatura = 1.75;
+        CalculadoraIMC calculadora = new CalculadoraIMC();
+
+        //When
+        double imcCalculado = calculadora.calcularIMC(peso, estatura);
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
+
+        //Then
+        assertThat(clasificacion, is("Delgadez leve"));
+    }
 }
