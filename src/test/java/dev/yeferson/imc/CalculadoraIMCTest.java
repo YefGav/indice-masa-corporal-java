@@ -165,6 +165,9 @@ public class CalculadoraIMCTest {
         //When
         double imcCalculado = calculadora.calcularIMC(peso, estatura);
         String clasificacion = calculadora.clasificarIMC(imcCalculado);
+
+        //Then
+        assertThat(clasificacion, is("Obesidad mórbida"));
     }
 
 }
