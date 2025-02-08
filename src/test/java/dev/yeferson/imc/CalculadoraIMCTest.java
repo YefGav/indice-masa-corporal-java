@@ -156,6 +156,15 @@ public class CalculadoraIMCTest {
     @DisplayName("Clasifica como 'Obesidad Morbida' cuando el IMC es mayor o igual a 40")
 
     void imcObesidadMorbidaTest() {
+
+        //Given
+        double peso = 120;
+        double estatura = 1.70;
+        CalculadoraIMC calculadora = new CalculadoraIMC();
+
+        //When
+        double imcCalculado = calculadora.calcularIMC(peso, estatura);
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
     }
 
 }
