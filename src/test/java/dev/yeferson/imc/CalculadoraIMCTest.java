@@ -12,11 +12,10 @@ public class CalculadoraIMCTest {
     @Test
     @DisplayName("Calcula corretamente el IMC segun los valores ingresados")
 
-    void calcularIMC() {
+    void calcularIMCTest() {
 
         //Given
-        double peso = 70;
-        double estatura = 1.75;
+        double peso = 70;        double estatura = 1.75;
         CalculadoraIMC calculadora =new CalculadoraIMC();
 
         //When
@@ -31,7 +30,7 @@ public class CalculadoraIMCTest {
     @Test
     @DisplayName("Clasifica como 'Delgadez Severa' cuando el IMC es menor a 16")
 
-    void imcDelgadezSevera() {
+    void imcDelgadezSeveraTest() {
 
         //Given     
         double peso = 40;
@@ -40,9 +39,9 @@ public class CalculadoraIMCTest {
 
         //When
         double imcCalculado = calculadora.calcularIMC(peso, estatura);
-        String clasificacion = calculadora.clasificarIMC(imc);
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
 
         //Then
-        assertThat(clasificacion, is("Delgadez Severa"));
+        assertThat(clasificacion, is("Delgadez severa"));
     }
 }
