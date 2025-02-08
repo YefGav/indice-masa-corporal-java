@@ -134,4 +134,11 @@ public class CalculadoraIMCTest {
         //Then        
         assertThat(clasificacion, is("Obesidad leve"));
     }
+
+    @Test
+    @DisplayName("Clasifica como 'Obesidad Moderada' cuando el IMC es mayor o igual a 35 y menor a 40")
+
+    void imcObesidadModeradaTest() {
+        
+    }
 }
