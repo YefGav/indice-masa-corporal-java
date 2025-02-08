@@ -140,13 +140,15 @@ public class CalculadoraIMCTest {
     void imcObesidadModeradaTest() {
 
         //Given
-        double peso = 100;
+        double peso = 105;
         double estatura = 1.70;
         CalculadoraIMC calculadora = new CalculadoraIMC();
 
         //When
         double imcCalculado = calculadora.calcularIMC(peso, estatura);
         String clasificacion = calculadora.clasificarIMC(imcCalculado);
-        
+
+        //Then
+        assertThat(clasificacion, is("Obesidad moderada"));
     }
 }
