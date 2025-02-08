@@ -69,7 +69,7 @@ public class CalculadoraIMCTest {
     void imcDelgadezLeveTest() {
 
         //Given     
-        double peso = 50;
+        double peso = 55;
         double estatura = 1.75;
         CalculadoraIMC calculadora = new CalculadoraIMC();
 
@@ -151,4 +151,11 @@ public class CalculadoraIMCTest {
         //Then
         assertThat(clasificacion, is("Obesidad moderada"));
     }
+
+    @Test
+    @DisplayName("Clasifica como 'Obesidad Morbida' cuando el IMC es mayor o igual a 40")
+
+    void imcObesidadMorbidaTest() {
+    }
+
 }
