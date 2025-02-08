@@ -98,4 +98,22 @@ public class CalculadoraIMCTest {
         //Then
         assertThat(clasificacion, is("Peso normal"));
     }
+
+    @Test
+    @DisplayName("Clasifica como 'Sobrepeso' cuando el IMC es mayor o igual a 25 y menor a 30")
+
+    void imcSobrepesoTest() {
+
+        //Given     
+        double peso = 80;
+        double estatura = 1.70;
+        CalculadoraIMC calculadora = new CalculadoraIMC();
+
+        //When
+        double imcCalculado = calculadora.calcularIMC(peso, estatura);        
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
+
+        //Then        
+        assertThat(clasificacion, is("Sobrepeso"));
+    }
 }
