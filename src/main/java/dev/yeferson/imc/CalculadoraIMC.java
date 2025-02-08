@@ -1,9 +1,12 @@
 package dev.yeferson.imc;
 
 public class CalculadoraIMC {
-
     public double calcularIMC(double peso, double estatura) {
-        return  peso / Math.pow(estatura, 2);
+
+        if (peso <= 0 || estatura <= 0) {
+            throw new IllegalArgumentException("Los valores de peso y estatura deben ser mayores a cero");
+        }
+        return peso / Math.pow(estatura, 2);
     }
 
     public String clasificarIMC(double imc) {
@@ -25,6 +28,5 @@ public class CalculadoraIMC {
             return "Obesidad mórbida";
         }
     }
-    
 
 }

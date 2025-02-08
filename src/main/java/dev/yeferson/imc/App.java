@@ -24,14 +24,15 @@ public final class App {
             String clasificacion = calculadora.clasificarIMC(imc);
 
             System.out.printf("Su IMC es: %.2f%n", imc);
-            System.out.println("Su clasificación es: " + clasificacion);
+            System.out.println("Su clasificación es: " + clasificacion);
 
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Ha ocurrido un error, por favor ingrese valores validos.");
+            System.out.println("Ocurrió un error inesperado. Por favor, intente de nuevo.");
         } finally {
+            
             scanner.close();
         }
-
     }
-
 }

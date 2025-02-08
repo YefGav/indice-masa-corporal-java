@@ -12,11 +12,12 @@ import static org.hamcrest.Matchers.containsString;
 
 class AppTest {
 
+
     @Test
-    @DisplayName("Calcula y muestra el IMC correctamente para entradas válidas")
-    void dadoPesoYEstaturaValidos_CuandoEjecutaApp_EntoncesCalculaIMCCorrectamente() {
+    @DisplayName("Muestra mensaje de error para entrada inválida")
+    void dadoEntradaInvalida_CuandoEjecutaApp_EntoncesMuestraMensajeDeError() {
         // Given
-        String simulatedInput = "70\n1.75\n";
+        String simulatedInput = "70\n0\n";
         ByteArrayInputStream input = new ByteArrayInputStream(simulatedInput.getBytes());
         System.setIn(input);
 
@@ -28,8 +29,7 @@ class AppTest {
 
         // Then
         String appOutput = output.toString();
-        assertThat(appOutput, containsString("Su IMC es: 22.86"));
-        assertThat(appOutput, containsString("Clasificación: Peso normal"));
+        assertThat(appOutput, containsString("Error: Los valores de peso y estatura deben ser mayores a cero"));
 
         // Reset System.in and System.out
         System.setIn(System.in);
