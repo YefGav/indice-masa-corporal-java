@@ -87,7 +87,7 @@ public class CalculadoraIMCTest {
     void imcPesoNormalTest() {
 
         //Given     
-        double peso = 70;
+        double peso = 60;
         double estatura = 1.75;
         CalculadoraIMC calculadora = new CalculadoraIMC();
 
