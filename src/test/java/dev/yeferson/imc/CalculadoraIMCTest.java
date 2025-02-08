@@ -83,4 +83,19 @@ public class CalculadoraIMCTest {
 
     @Test
     @DisplayName("Clasifica como 'Peso Normal' cuando el IMC es mayor o igual a 18.5 y menor a 25")
+
+    void imcPesoNormalTest() {
+
+        //Given     
+        double peso = 70;
+        double estatura = 1.75;
+        CalculadoraIMC calculadora = new CalculadoraIMC();
+
+        //When
+        double imcCalculado = calculadora.calcularIMC(peso, estatura);
+        String clasificacion = calculadora.clasificarIMC(imcCalculado);
+
+        //Then
+        assertThat(clasificacion, is("Peso normal"));
+    }
 }
