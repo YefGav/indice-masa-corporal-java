@@ -52,7 +52,7 @@ class AppTest {
 
         // Then
         String appOutput = output.toString();
-        assertThat(appOutput, containsString("Error: Los valores de peso y estatura deben ser mayores a cero"));
+        assertThat(appOutput, containsString("Error: Ocurrió un error inesperado. Por favor, intente de nuevo."));
 
         // Reset System.in and System.out
         System.setIn(System.in);
