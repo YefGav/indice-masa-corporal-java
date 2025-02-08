@@ -80,4 +80,7 @@ public class CalculadoraIMCTest {
         //Then
         assertThat(clasificacion, is("Delgadez leve"));
     }
+
+    @Test
+    @DisplayName("Clasifica como 'Peso Normal' cuando el IMC es mayor o igual a 18.5 y menor a 25")
 }
