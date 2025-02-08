@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import static org.hamcrest.Matchers.instanceOf;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.closeTo;
 
 public class CalculadoraIMCTest {
 
@@ -24,7 +25,7 @@ public class CalculadoraIMCTest {
         //Then
         double imcEsperado = 22.86;
         assertThat(calculadora, instanceOf(CalculadoraIMC.class));
-        assertThat(imcCalculado, is(imcEsperado));
+        assertThat(imcCalculado, closeTo(imcEsperado, 0.01));
 
 
       
