@@ -4,7 +4,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import static org.hamcrest.Matchers.instanceOf;
 import org.junit.jupiter.api.Test;
-import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.closeTo;
 
 public class CalculadoraIMCTest {
