@@ -12,27 +12,27 @@ public class CalculadoraIMC {
         this.estatura = estatura;
     }
 
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getEstatura() {
+        return estatura;
+    }
+
     public double calcularIMC() {
         return peso / Math.pow(estatura, 2);
     }
 
     public String clasificarIMC(double imc) {
-        if (imc < 16) {
-            return "Delgadez severa";
-        } else if (imc >= 16 && imc < 17) {
-            return "Delgadez moderada";
-        } else if (imc >= 17 && imc < 18.5) {
-            return "Delgadez leve";
-        } else if (imc >= 18.5 && imc < 25) {
-            return "Peso normal";
-        } else if (imc >= 25 && imc < 30) {
-            return "Sobrepeso";
-        } else if (imc >= 30 && imc < 35) {
-            return "Obesidad leve";
-        } else if (imc >= 35 && imc < 40) {
-            return "Obesidad moderada";
-        } else {
-            return "Obesidad mórbida";
-        }
+        
+        if (imc < 16) return "Delgadez severa";
+        if (imc < 17) return "Delgadez moderada";
+        if (imc < 18.5) return "Delgadez leve";
+        if (imc < 25) return "Peso normal";
+        if (imc < 30) return "Sobrepeso";
+        if (imc < 35) return "Obesidad leve";
+        if (imc < 40) return "Obesidad moderada";
+        return "Obesidad mórbida";
     }
 }
